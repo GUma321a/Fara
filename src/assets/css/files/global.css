@@ -1,0 +1,58 @@
+/* Header */
+.header__menu-list-active {
+  @apply left-0;
+}
+.header__menu-list-active .header__menu-list-item {
+  @apply mr-0;
+}
+.header__burger.active-burger::before {
+  @apply rotate-45 top-[6px];
+}
+.header__burger.active-burger::after {
+  @apply -rotate-45 bottom-[10px];
+}
+.header__burger.active-burger span {
+  @apply scale-0;
+}
+.header__menu-list-link.active {
+  @apply relative before:w-full before:absolute before:h-[2px] before:bg-cta before:left-0 before:bottom-0 before:pointer-events-none;
+}
+.header__menu-list-item + .header__menu-list-item .header__menu-list-link {
+  @apply border-t-gray-700 border-t lg:border-none;
+}
+
+/* Heading */
+.heading__text + .heading__text {
+  @apply mt-xs;
+}
+
+/* Container */
+@screen lg {
+  .container {
+    @apply box-content px-md;
+  }
+}
+
+@screen midlg {
+  .container {
+    @apply max-w-[1112px] px-lg w-auto;
+  }
+}
+@screen xl {
+  .container {
+    @apply max-w-[1208px];
+  }
+}
+
+.hero-padding {
+  @apply py-[80px] md:py-[100px];
+}
+.section-padding {
+  @apply py-[80px] md:py-[100px];
+}
+.section-margin {
+  @apply my-[80px] md:my-[100px];
+}
+.accordion__button.main__accordion-button {
+  @apply bg-inherit text-secondary text-20 font-semibold;
+}

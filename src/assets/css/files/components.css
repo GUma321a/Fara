@@ -1,0 +1,111 @@
+@layer components {
+  /* Typography */
+  .heading-h1 {
+    @apply font-primary font-medium text-72 leading-110 tracking-tight;
+  }
+  .heading-h2 {
+    @apply font-primary font-medium text-64 leading-130 tracking-tight;
+  }
+  .heading-h3 {
+    @apply font-primary font-medium text-56 leading-130 tracking-tight;
+  }
+  .heading-h4 {
+    @apply font-primary font-medium text-48 leading-130 tracking-tight;
+  }
+  .heading-h5 {
+    @apply font-primary font-medium text-40 leading-130 tracking-tight;
+  }
+
+  .body-heading-xl {
+    @apply font-primary font-medium text-24 leading-130 tracking-tight;
+  }
+  .body-heading-l {
+    @apply font-primary font-medium text-20 leading-130 tracking-tight;
+  }
+  .body-heading-m {
+    @apply font-primary font-medium text-16 leading-130 tracking-tight;
+  }
+
+  .body-text-l {
+    @apply font-primary font-normal text-18 leading-120;
+  }
+  .body-text-m {
+    @apply font-primary font-normal text-16 leading-120;
+  }
+  .body-text-s {
+    @apply font-primary font-normal text-14 leading-120;
+  }
+
+  .animated-border {
+    @apply relative transition-all !opacity-100 !border-transparent bg-black after:absolute after:top-0 after:left-0 after:h-full after:w-full after:z-1 before:absolute before:bg-black before:w-[calc(100%-4px)] before:h-[calc(100%-4px)] before:z-[5] before:top-[2px] before:left-[2px];
+  }
+  .animated-border::after {
+    background: linear-gradient(166.94deg, #1d32f4 6%, rgba(29, 50, 244, 0.1) 71.21%);
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 200% 200%;
+    transition: all;
+  }
+  .animated-border.animated-border--red::after {
+    background: linear-gradient(148.33deg, #e00000 -9.9%, rgba(224, 0, 0, 0.1) 107.38%);
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 200% 300%;
+    transition: all;
+  }
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Form */
+  .form-input,
+  .form-textarea {
+    @apply border border-gray-600 bg-transparent body-text-m py-xs px-sm w-full outline-none text-white transition-all placeholder:text-gray-400 invalid:border-system-error placeholder:transition-all focus:border-white focus:placeholder:opacity-0;
+  }
+  .form-input.error,
+  .form-textarea.error,
+  .form-select select.error {
+    @apply border-system-error;
+  }
+  .form-label {
+    @apply body-text-s mx-sm block;
+  }
+  .form-select {
+    @apply relative before:absolute before:bg-[url('../images/icons/dropdown.svg')] before:bg-contain before:w-sm before:h-sm before:top-1/2 before:-translate-y-1/2 before:right-sm before:pointer-events-none;
+  }
+  .form-select select {
+    @apply appearance-none outline-none border border-gray-600 text-gray-400 bg-transparent body-text-m py-xs px-sm w-full transition-all placeholder:text-gray-400 placeholder:transition-all focus:border-white focus:placeholder:opacity-0 valid:text-white;
+  }
+  .form-select select option {
+    @apply bg-black text-white;
+  }
+  .form-textarea {
+    @apply resize-none min-h-[198px];
+  }
+
+  /* Buttons */
+  .button-ghost-l {
+    @apply py-[16px] px-[36px] bg-white text-14 text-primary uppercase font-primary font-semibold border-[1px] border-white hover:bg-transparent focus:bg-transparent transition-colors;
+  }
+  .button-ghost-m {
+    @apply py-[16px] px-[36px] bg-white text-12 text-primary uppercase font-primary font-semibold border-[1px] border-white hover:bg-transparent focus:bg-transparent transition-colors;
+  }
+  .button-ghost-s {
+    @apply py-[14px] px-[28px] bg-white text-[10px] text-primary uppercase font-primary font-semibold border-[1px] border-white hover:bg-transparent focus:bg-transparent transition-colors;
+  }
+  .button-cta-l {
+    @apply lg:body-text-l body-text-m uppercase bg-secondary hover:bg-transparent focus:bg-transparent transition-all border-[2px] border-secondary text-white hover:text-secondary focus:text-secondary rounded-[8px] py-[10px] px-[20px] md:py-[14px] md:px-[30px];
+  }
+  .button-cta-m {
+    @apply lg:body-text-m body-text-s uppercase bg-secondary hover:bg-transparent focus:bg-transparent transition-all border-[2px] border-secondary text-white hover:text-secondary focus:text-secondary rounded-[8px] py-[10px] px-[20px] md:py-[14px] md:px-[30px];
+  }
+  .button-cta-s {
+    @apply body-text-s uppercase bg-secondary hover:bg-transparent focus:bg-transparent transition-all border-[2px] border-secondary text-white hover:text-secondary focus:text-secondary rounded-[8px] py-[10px] px-[20px] md:py-[14px] md:px-[30px];
+  }
+}

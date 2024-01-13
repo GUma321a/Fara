@@ -1,0 +1,17 @@
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white font-primary font-light text-black antialiased;
+  }
+
+  a {
+    @apply inline-block transition-colors;
+  }
+
+  section:nth-child(2n) {
+    @apply section-padding bg-gray-100;
+  }
+}

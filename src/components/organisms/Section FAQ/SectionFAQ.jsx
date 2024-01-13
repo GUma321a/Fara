@@ -1,0 +1,68 @@
+import React, { useState } from 'react';
+import AccordionComponent from '../../molecules/AccordionComponent';
+import { Text, Title, Button } from '../../atoms';
+import PopUpForm from '../../molecules/PopUpForm';
+
+export default function SectionFAQ() {
+  const faqContent = [
+    {
+      id: 0,
+      title: 'Як підібрати фару до автомобіля?',
+      text: 2,
+    },
+    {
+      id: 1,
+      title: 'Як довго потрібно чекати?',
+      text: 2,
+    },
+    {
+      id: 2,
+      title: 'Як замовити фару?',
+      text: 2,
+    },
+    {
+      id: 3,
+      title: 'Доставка і отримання',
+      text: 2,
+    },
+  ];
+  const [open, setOpen] = useState(false);
+
+  const onOpen = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+  return (
+    <section className="faq" id="faq">
+      <div className="container">
+        <div className="faq__wrapper flex flex-wrap justify-between gap-[30px] md:flex-nowrap">
+          <div className="faq__description basis-[50%]">
+            <Title text="Часті запитання" size="h3" className="mb-md text-center lg:mb-lg" />
+            <Text
+              size="m"
+              className="mb-md text-gray-400 lg:mb-lg "
+              text="Найчастіші питання які виникають в наших клієнтів"
+            />
+            <Button
+              buttonType="button"
+              onClick={onOpen}
+              text="Зробити замовлення"
+              variant="cta"
+              size="l"
+            />
+            <PopUpForm open={open} onClose={onClose} />
+          </div>
+          <AccordionComponent
+            className="w-full"
+            content={faqContent}
+            wrapperClass="flex gap-[30px] flex-col"
+            titleClass="accordion__button main__accordion-button"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
