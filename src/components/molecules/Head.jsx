@@ -75,9 +75,8 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  title: 'watchTowr',
-  description:
-    'With the watchTowr Platform, continuously discover high-impact vulnerabilities in your organisation.',
+  title: '-',
+  description: '-',
 };
 
 export default Head;

@@ -17,6 +17,14 @@ export default function Slider({ content, itemWrapper, wrapperClass }) {
         autoplay: true,
         interval: 3000,
         pagination: false,
+        breakpoints: {
+          760: {
+            perPage: 1,
+          },
+          1000: {
+            perPage: 2,
+          },
+        },
       }}
     >
       {content.map((i) => {
@@ -24,7 +32,7 @@ export default function Slider({ content, itemWrapper, wrapperClass }) {
           <SplideSlide key={i.id}>
             <div className={`slider__image-wrapper max-h-full ${itemWrapper}`.trim()}>
               <Image
-                className="slider__image max-h-[150px] rounded-tl-[60px] rounded-br-[60px]"
+                className="slider__image max-h-[150px] rounded-br-[60px] rounded-tl-[60px]"
                 src={i.src}
               />
             </div>

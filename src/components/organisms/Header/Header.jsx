@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-import { Button, Link } from '../../atoms';
+import { Button, Image, Link } from '../../atoms';
 import logo from '../../../assets/images/symbol.svg';
 import wordmark from '../../../assets/images/wordmark.svg';
 import PopUpForm from '../../molecules/PopUpForm';
+import telegram from '../../../assets/images/icons/telegram.svg';
+import viber from '../../../assets/images/icons/viber.svg';
 
 function Header() {
   const [activeMenu, setActiveMenu] = useState(false);
@@ -65,6 +67,25 @@ function Header() {
               <li className="header__menu-list-item mr-xl">
                 <Button text="Зробити замовлення" variant="cta" size="s" onClick={onOpen} />
               </li>
+              <div className="header__menu-social flex">
+                <Link
+                  href="#"
+                  onClick={toggleMenu}
+                  className="header__menu-list-link body-text-m w-full whitespace-nowrap py-md transition-colors hover:text-cta midlg:py-0"
+                >
+                  <Image className="header__menu-social-icon h-[16px] w-[16px]" src={telegram} />
+                </Link>
+                <Link
+                  href="#"
+                  onClick={toggleMenu}
+                  className="header__menu-list-link body-text-m w-full whitespace-nowrap py-md transition-colors hover:text-cta midlg:py-0"
+                >
+                  <Image
+                    className="header__menu-social-icon h-full max-h-[16px] w-full max-w-[16px]"
+                    src={viber}
+                  />
+                </Link>
+              </div>
             </ul>
           </nav>
           <buttton

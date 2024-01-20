@@ -39,11 +39,11 @@ export default function SectionFAQ() {
     <section className="faq" id="faq">
       <div className="container">
         <div className="faq__wrapper flex flex-wrap justify-between gap-[30px] md:flex-nowrap">
-          <div className="faq__description basis-[50%]">
+          <div className="faq__description mx-auto basis-[50%]">
             <Title text="Часті запитання" size="h3" className="mb-md text-center lg:mb-lg" />
             <Text
               size="m"
-              className="mb-md text-gray-400 lg:mb-lg "
+              className="mb-md text-center text-gray-400 md:text-left lg:mb-lg"
               text="Найчастіші питання які виникають в наших клієнтів"
             />
             <Button
