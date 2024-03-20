@@ -2,7 +2,16 @@ import React from 'react';
 import NextImage from 'next/image';
 import { motion, useAnimation } from 'framer-motion';
 
-function ImageComponent(props) {
+function ImageComponent({
+  props,
+  alt = '',
+  src = '',
+  width = '',
+  height = '',
+  className = '',
+  quality = 100,
+  loading = 'lazy',
+}) {
   const [loaded, setLoaded] = React.useState(false);
   const motionControls = useAnimation();
 
@@ -21,7 +30,7 @@ function ImageComponent(props) {
     animate: motionControls,
     variants: {
       visible: { opacity: 1 },
-      hidden: { opacity: 0 },
+      hidden: { opacity: 1 },
     },
     transition: {
       ease: 'easeOut',
@@ -30,16 +39,20 @@ function ImageComponent(props) {
   };
 
   return (
-    <motion.span {...motionProps} className="block">
-      <NextImage {...props} onLoadingComplete={onLoadingComplete} />
+    <motion.span {...motionProps} className="block h-full">
+      <NextImage
+        {...props}
+        alt={alt}
+        src={src}
+        width={width}
+        height={height}
+        onLoad={onLoadingComplete}
+        quality={quality}
+        loading={loading}
+        className={className}
+      />
     </motion.span>
   );
 }
-
-ImageComponent.defaultProps = {
-  alt: '',
-  layout: 'responsive',
-  lazyBoundary: '1000px',
-};
 
 export default ImageComponent;

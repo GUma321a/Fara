@@ -1,36 +1,26 @@
 import React from 'react';
 import pt from 'prop-types';
-import NextLink from 'next/link';
+import Link from 'next/link';
 
-function Link({ href, className, ...props }) {
+function LinkComponent({ href = '', external = false, ...props }) {
   if (!href) {
     // eslint-disable-next-line jsx-a11y/anchor-has-content
-    return <a className={className} {...props} />;
+    return <a {...props} />;
   }
 
-  if (href.match(/^https?:/)) {
+  if (href.match(/^https?:/) || external) {
     return (
       // eslint-disable-next-line jsx-a11y/anchor-has-content
-      <a className={className} href={href} target="_blank" rel="nofollow noreferrer" {...props} />
+      <a href={href} target="_blank" rel="nofollow noreferrer" {...props} />
     );
   }
 
-  return (
-    <NextLink href={href} passHref>
-      {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
-      <a className={className} {...props} />
-    </NextLink>
-  );
+  return <Link href={href} passHref {...props} />;
 }
 
-Link.propTypes = {
+LinkComponent.propTypes = {
   href: pt.string,
-  className: pt.string,
+  external: pt.bool,
 };
 
-Link.defaultProps = {
-  href: '',
-  className: '',
-};
-
-export default Link;
+export default LinkComponent;

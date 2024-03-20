@@ -38,8 +38,8 @@ export default function SectionSlider() {
   return (
     <section className="slider section-margin" id="gallery">
       <div className="container">
-        <Title size="h3" text="Останні покупки фар" className="text-center mb-md lg:mb-lg" />
-        <Slider content={items} />
+        <Title size="h3" text="Останні покупки фар" className="mb-md text-center lg:mb-lg" />
+        <Slider content={items} wrapperClass="px-[60px] h-[300px]" />
       </div>
     </section>
   );

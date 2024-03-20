@@ -1,7 +1,7 @@
 import React from 'react';
 import pt from 'prop-types';
 
-function Text({ children, text, size, className, ...props }) {
+function Text({ children, text, size = 'm', className, ...props }) {
   const textClass = () => {
     if (size === 'l') return 'body-text-m sm:body-text-l';
     if (size === 'm') return 'body-text-m';
@@ -22,12 +22,6 @@ Text.propTypes = {
   text: pt.string,
   size: pt.oneOf(['s', 'm', 'l']),
   className: pt.string,
-};
-
-Text.defaultProps = {
-  text: '',
-  size: 'm',
-  className: '',
 };
 
 export default Text;

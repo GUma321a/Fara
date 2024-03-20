@@ -10,7 +10,7 @@ Element.propTypes = {
   as: pt.string,
 };
 
-function Title({ children, text, size, className, ...props }) {
+function Title({ children, text, size = 'h1', className, ...props }) {
   const titleClass = () => {
     if (size === 'h1')
       return 'heading-h5 md:heading-h4 lg:heading-h3 midlg:heading-h2 xl:heading-h1';
@@ -34,12 +34,6 @@ Title.propTypes = {
   text: pt.string,
   size: pt.oneOf(['h5', 'h4', 'h3', 'h2', 'h1']),
   className: pt.string,
-};
-
-Title.defaultProps = {
-  text: '',
-  size: 'h1',
-  className: '',
 };
 
 export default Title;

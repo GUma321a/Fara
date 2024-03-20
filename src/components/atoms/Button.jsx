@@ -6,10 +6,10 @@ import Link from './Link';
 function Button({
   children,
   link,
-  text,
-  buttonType,
-  variant,
-  size,
+  text = '',
+  buttonType = 'button',
+  variant = 'cta',
+  size = 'l',
   className,
   wrapperClass,
   ...props
@@ -54,15 +54,6 @@ Button.propTypes = {
   size: pt.oneOf(['s', 'm', 'l', 'xl']),
   className: pt.string,
   wrapperClass: pt.string,
-};
-
-Button.defaultProps = {
-  text: '',
-  buttonType: 'button',
-  variant: 'cta',
-  size: 'l',
-  className: '',
-  wrapperClass: '',
 };
 
 export default Button;

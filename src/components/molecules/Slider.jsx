@@ -9,7 +9,6 @@ export default function Slider({ content, itemWrapper, wrapperClass }) {
     <Splide
       className={wrapperClass}
       options={{
-        height: 300,
         rewind: true,
         perPage: 3,
         perMove: 1,
@@ -30,10 +29,11 @@ export default function Slider({ content, itemWrapper, wrapperClass }) {
       {content.map((i) => {
         return (
           <SplideSlide key={i.id}>
-            <div className={`slider__image-wrapper max-h-full ${itemWrapper}`.trim()}>
+            <div className={`slider__image-wrapper ${itemWrapper}`.trim()}>
               <Image
-                className="slider__image max-h-[150px] rounded-br-[60px] rounded-tl-[60px]"
+                className="slider__image h-full max-h-[300px] rounded-br-[60px] rounded-tl-[60px]"
                 src={i.src}
+                fill
               />
             </div>
           </SplideSlide>
@@ -47,7 +47,4 @@ Slider.propTypes = {
   content: pt.instanceOf(Array),
   itemWrapper: pt.string,
   wrapperClass: pt.string,
-};
-Slider.defaultProps = {
-  itemWrapper: '',
 };

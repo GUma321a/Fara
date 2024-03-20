@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 import { Button, Image, Link } from '../../atoms';
-import logo from '../../../assets/images/symbol.svg';
-import wordmark from '../../../assets/images/wordmark.svg';
 import PopUpForm from '../../molecules/PopUpForm';
 import telegram from '../../../assets/images/icons/telegram.svg';
 import viber from '../../../assets/images/icons/viber.svg';
@@ -32,12 +30,11 @@ function Header() {
         <div className="header__navbar flex w-full items-center justify-between text-white">
           <div className="header__logo z-110 flex items-center">
             <Link
-              className="header__logo-link inline-flex items-center"
+              className="header__logo-link body-text-l inline-flex items-center"
               href="/"
               onClick={toggleMenu}
             >
-              <img src={logo.src} alt="watchTowr" />
-              <img src={wordmark.src} className="ml-[11px] hidden midlg:block" alt="watchTowr" />
+              Fara
             </Link>
           </div>
           <nav className="header__menu block">
@@ -67,23 +64,20 @@ function Header() {
               <li className="header__menu-list-item mr-xl">
                 <Button text="Зробити замовлення" variant="cta" size="s" onClick={onOpen} />
               </li>
-              <div className="header__menu-social flex">
+              <div className="header__menu-social flex justify-between gap-sm">
                 <Link
                   href="#"
                   onClick={toggleMenu}
-                  className="header__menu-list-link body-text-m w-full whitespace-nowrap py-md transition-colors hover:text-cta midlg:py-0"
+                  className="header__menu-list-link transition-colors hover:text-cta midlg:py-0"
                 >
-                  <Image className="header__menu-social-icon h-[16px] w-[16px]" src={telegram} />
+                  <Image className="header__menu-social-icon h-[32px] w-[32px]" src={telegram} />
                 </Link>
                 <Link
                   href="#"
                   onClick={toggleMenu}
-                  className="header__menu-list-link body-text-m w-full whitespace-nowrap py-md transition-colors hover:text-cta midlg:py-0"
+                  className="header__menu-list-link transition-colors hover:text-cta midlg:py-0"
                 >
-                  <Image
-                    className="header__menu-social-icon h-full max-h-[16px] w-full max-w-[16px]"
-                    src={viber}
-                  />
+                  <Image className="header__menu-social-icon h-[32px] w-[32px]" src={viber} />
                 </Link>
               </div>
             </ul>

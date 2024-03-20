@@ -15,8 +15,8 @@ export default function SectionAdvantages() {
           {item.map((i) => {
             return (
               <p
+                key={i.name + i.id}
                 className="advantages__item lg:body-text-m body-text-s rounded-[100px] border-[2px] border-secondary bg-transparent px-[20px] py-[16px] uppercase text-secondary md:px-[30px] md:py-[24px]"
-                key={i.key}
               >
                 {i.name}
               </p>

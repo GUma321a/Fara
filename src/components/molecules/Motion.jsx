@@ -3,7 +3,7 @@ import pt from 'prop-types';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 
-function Motion({ children, duration, threshold, from, delay, className }) {
+function Motion({ children, duration = 0.5, threshold = 0.8, from, delay = 0, className }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -48,13 +48,6 @@ Motion.propTypes = {
   from: pt.shape(),
   delay: pt.number,
   className: pt.string,
-};
-
-Motion.defaultProps = {
-  duration: 0.5, // In seconds
-  threshold: 0.8, // [from 0 to 1] Indicating the percentage that should be visible before triggering
-  delay: 0,
-  className: '',
 };
 
 export default Motion;

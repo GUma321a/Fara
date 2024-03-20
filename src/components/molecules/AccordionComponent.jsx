@@ -18,13 +18,15 @@ export default function AccordionComponent({ content, textClass, titleClass, wra
         return (
           <AccordionItem
             key={i.id}
-            className="lg:body-text-xl body-text-l uppercase bg-transparent border-[2px] border-secondary text-secondary rounded-[8px] py-[10px] px-[20px] md:py-[14px] md:px-[30px]"
+            className="lg:body-text-xl body-text-l rounded-[8px] border-[2px] border-secondary bg-transparent px-[20px] py-[10px] uppercase text-secondary md:px-[30px] md:py-[14px]"
           >
             <AccordionItemHeading>
               <AccordionItemButton className={titleClass}>{i.title}</AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <Text size="m" text={i.text} className={textClass} />
+              <Text size="m" className={textClass}>
+                {i.text}
+              </Text>
             </AccordionItemPanel>
           </AccordionItem>
         );
